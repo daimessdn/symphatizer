@@ -7,18 +7,18 @@ import './keynote.css';
 function App() {
   const notes = [
     {key: "C4", tuts: "white", left: "0px"},
-    {key: "C#4", tuts: "black", left: "45px"},
-    {key: "D4", tuts: "white", left: "60px"},
-    {key: "D#4", tuts: "black", left: "105px"},
-    {key: "E4", tuts: "white", left: "120px"},
-    {key: "F4", tuts: "white", left: "180px"},
-    {key: "F#4", tuts: "black", left: "225px"},
-    {key: "G4", tuts: "white", left: "240px"},
-    {key: "G#4", tuts: "black", left: "285px"},
-    {key: "A4", tuts: "white", left: "300px"},
-    {key: "A#4", tuts: "black", left: "345px"},
-    {key: "B4", tuts: "white", left: "360px"},
-    {key: "C5", tuts: "white", left: "420px"},
+    {key: "C#4", tuts: "black", left: "30px"},
+    {key: "D4", tuts: "white", left: "40px"},
+    {key: "D#4", tuts: "black", left: "70px"},
+    {key: "E4", tuts: "white", left: "80px"},
+    {key: "F4", tuts: "white", left: "120px"},
+    {key: "F#4", tuts: "black", left: "150px"},
+    {key: "G4", tuts: "white", left: "160px"},
+    {key: "G#4", tuts: "black", left: "190px"},
+    {key: "A4", tuts: "white", left: "200px"},
+    {key: "A#4", tuts: "black", left: "230px"},
+    {key: "B4", tuts: "white", left: "240px"},
+    {key: "C5", tuts: "white", left: "280px"},
   ];
 
   const synth = new Tone.Synth().toDestination();
@@ -33,10 +33,9 @@ function App() {
             return (
               <div 
                    key={index}
-                   className={note.tuts + "-note"}
+                   className={`${note.tuts}-note`}
                    style={{ left: note.left }}
                    onClick={() => {synth.triggerAttackRelease(note.key, "8n")}}>
-                
               </div>
             )
           })}
