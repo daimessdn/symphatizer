@@ -1,3 +1,10 @@
+// init'd keyboard instrument
+const instruments = ["synth", "amsynth"];
+let currentInstrument = instruments[0];
+
+let synth = new Tone.Synth().toDestination();
+
+// init'd keyboard notes
 const notes = [
     {key: "C4", tuts: "white", left: "0px"},
     {key: "C#4", tuts: "black", left: "30px"},
@@ -26,4 +33,13 @@ const notes = [
     {key: "C6", tuts: "white", left: "560px"},
 ];
 
-export default notes;
+const keyboard = document.querySelector(".keyboard");
+
+document.addEventListener("DOMContentLoaded", () => {
+	notes.forEach(note => {
+		keyboard.innerHTML += `<div class="${note.tuts}-note"
+		                           onmousedown="synth.triggerAttackRelease('${note.key}', '8n')"
+		                           style="left: ${note.left};">
+		                       </div>`;
+	})
+})
