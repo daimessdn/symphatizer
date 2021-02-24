@@ -14,7 +14,17 @@
   </head>
   <body>
   
-    <div class="keyboard"></div>  
+    <div id="synthetizer">
+      <select id="instrument-select">
+        <option value="synth">Synth</option>
+        <option value="amsynth">AMSynth</option>
+        <option value="duosynth">DuoSynth</option>
+        <option value="metalsynth">MetalSynth</option>
+        <option value="plucksynth">PluckSynth</option>
+      </select>
+
+      <div class="keyboard"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"
             integrity="sha512-gwSDP1iEKl4KG0wi3N89RAJU91s78jb/TGC6lsbF5IyR2c19Rn7Jl1icK4K4kUiJNwQUEPI7o98T+GJVWNuvIQ=="

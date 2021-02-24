@@ -2,6 +2,8 @@
   position: relative;
   width: 600px;
   height: 100px;
+  background-color: #444;
+  padding: 1px;
 }
 
 .keyboard * {
@@ -18,7 +20,7 @@
   border-radius: 4px;
 
   box-shadow: 0 10px 0 0 #666;
-  transition: all .3s ease;
+  transition: all .2s ease;
 }
 
 .white-note {
@@ -31,7 +33,7 @@
   border-radius: 4px;
 
   box-shadow: 0 10px 0 0 #444;
-  transition: all .3s ease;
+  transition: all .2s ease;
 }
 
 .white-note:active {
@@ -48,4 +50,11 @@
   height: 50px;
 
   box-shadow: none;
+}
+
+#instrument-select {
+  font-family: "DotGothic16", sans-serif;
+  margin: 10px;
+  background-color: #eee;
+  padding: 2px;
 }

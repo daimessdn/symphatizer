@@ -8,12 +8,10 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
-.App-header {
-  background-color: #fff;
+#synthetizer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;

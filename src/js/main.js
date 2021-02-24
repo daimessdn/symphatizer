@@ -1,7 +1,5 @@
 // init'd keyboard instrument
-const instruments = ["synth", "amsynth"];
-let currentInstrument = instruments[0];
-
+let currentInstrument = "synth";
 let synth = new Tone.Synth().toDestination();
 
 // init'd keyboard notes
@@ -35,11 +33,42 @@ const notes = [
 
 const keyboard = document.querySelector(".keyboard");
 
-document.addEventListener("DOMContentLoaded", () => {
+const instrumentOptions = document.querySelector("#instrument-select");
+
+// change instrument function
+const changeInstrument = (currentInstrument) => {
+    switch (currentInstrument) {
+        case "synth":
+            return new Tone.Synth().toDestination();
+
+        case "amsynth":
+            return new Tone.AMSynth().toDestination();
+
+        case "duosynth":
+            return new Tone.DuoSynth().toDestination();
+
+        case "metalsynth":
+            return new Tone.MetalSynth().toDestination();
+
+        case "plucksynth":
+            return new Tone.PluckSynth().toDestination();
+    }
+};
+
+// load keyboard notes
+document.addEventListener("DOMContentLoaded", (event) => {
 	notes.forEach(note => {
 		keyboard.innerHTML += `<div class="${note.tuts}-note"
 		                           onmousedown="synth.triggerAttackRelease('${note.key}', '8n')"
 		                           style="left: ${note.left};">
 		                       </div>`;
-	})
-})
+	});
+});
+
+// change synth instrument
+//// based on instrument option changed
+instrumentOptions.addEventListener("change", (event) => {
+    currentInstrument = event.target.value;
+
+    synth = changeInstrument(currentInstrument);
+});
