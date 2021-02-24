@@ -1,0 +1,51 @@
+.keyboard {
+  position: relative;
+  width: 600px;
+  height: 100px;
+}
+
+.keyboard * {
+  cursor: pointer;
+}
+
+.black-note {
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  background-color: #444;
+  border-radius: 4px;
+
+  box-shadow: 0 10px 0 0 #666;
+  transition: all .3s ease;
+}
+
+.white-note {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #000;
+  top: 0;
+  background-color: #fff;
+  border-radius: 4px;
+
+  box-shadow: 0 10px 0 0 #444;
+  transition: all .3s ease;
+}
+
+.white-note:active {
+  width: 40px;
+  top: 10px;
+  height: calc(100%);
+
+  box-shadow: none;
+}
+
+.black-note:active {
+  top: 10px;
+  width: 20px;
+  height: 50px;
+
+  box-shadow: none;
+}
