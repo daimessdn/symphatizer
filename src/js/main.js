@@ -47,8 +47,17 @@ const changeInstrument = (currentInstrument) => {
         case "duosynth":
             return new Tone.DuoSynth().toDestination();
 
+        case "fmsynth":
+            return new Tone.FMSynth().toDestination();
+
+        case "membranesynth":
+            return new Tone.MembraneSynth().toDestination();
+
         case "metalsynth":
             return new Tone.MetalSynth().toDestination();
+
+        case "monosynth":
+            return new Tone.MonoSynth().toDestination();
 
         case "plucksynth":
             return new Tone.PluckSynth().toDestination();
