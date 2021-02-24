@@ -2,8 +2,6 @@ import React from "react";
 
 import Keyboards from "./components/keyboards/Keyboards";
 
-import './App.css';
-
 function App() {
   return (
     <div className="App">
